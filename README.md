@@ -16,9 +16,101 @@ It covers several core topics:
 | [`surface_operators_diffusion`](surface_operators_diffusion/) | Discrete mesh operators, diffusion, HKS, and heat-method geodesics | `TD1_correction.ipynb` | `td1_utils.py`, `plot_utils/` |
 | [`surface_parameterization_registration`](surface_parameterization_registration/) | Surface parameterization, ICP, ARAP, and non-rigid registration | `TD2_ZepengCHU.ipynb` | `td2_utils.py` |
 | [`diffusionnet_rna_segmentation`](diffusionnet_rna_segmentation/) | DiffusionNet blocks and RNA mesh segmentation | `TD4_mva_geom_ZepengCHU.ipynb` | `td4_utils.py` |
+| [`pointnet_classification_segmentation`](pointnet_classification_segmentation/) | PointNet classification and segmentation | `Lab4.ipynb` | `lab4_utils.py` |
 | [`implicit_mesh_reconstruction`](implicit_mesh_reconstruction/) | Implicit reconstruction with SDF/DeepSDF-style networks | `TD5.ipynb` | `td5_utils.py` |
 | [`implicit_shape_interpolation`](implicit_shape_interpolation/) | SIREN-based implicit shape interpolation | `TP_6_ZepengCHU.ipynb` | `tp6_utils.py` |
-| [`pointnet_classification_segmentation`](pointnet_classification_segmentation/) | PointNet classification and segmentation | `Lab4.ipynb` | `lab4_utils.py` |
+
+## Assignment Overview
+
+### Mesh Operators and Diffusion
+
+**Objective.** Build the basic discrete differential geometry pipeline for triangle meshes, then use Laplacian-based operators for diffusion, spectral analysis, and geometric descriptors.
+
+**Core ideas.**
+
+- OFF mesh loading and lightweight mesh containers
+- Face areas, vertex area matrices, and cotangent weights
+- Cotangent Laplacian / stiffness matrix construction
+- Full and spectral heat diffusion on surfaces
+- Heat Kernel Signature (HKS)
+- Heat-method geodesic distance approximation
+
+**Implementation.** [`surface_operators_diffusion`](surface_operators_diffusion/) contains the completed notebook and mesh assets. `td1_utils.py` factors out the mesh IO, discrete operators, diffusion routines, HKS computation, and heat-method helpers.
+
+### Surface Parameterization and Registration
+
+**Objective.** Implement classical surface processing algorithms for flattening, aligning, and deforming meshes with optimization-based methods.
+
+**Core ideas.**
+
+- Boundary edge extraction and ordered boundary loops
+- Tutte embedding with fixed circular boundary constraints
+- Least Squares Conformal Maps (LSCM)
+- Nearest-neighbor correspondence search
+- Rigid ICP with Procrustes alignment
+- ARAP deformation and non-rigid ICP-style registration
+
+**Implementation.** [`surface_parameterization_registration`](surface_parameterization_registration/) contains the parameterization and registration notebook. `td2_utils.py` collects the reusable boundary, parameterization, ICP, and ARAP utilities extracted from the notebook.
+
+### DiffusionNet RNA Segmentation
+
+**Objective.** Implement the main components of DiffusionNet and apply them to vertex-wise segmentation on RNA mesh data.
+
+**Core ideas.**
+
+- Projection and unprojection between vertex functions and spectral bases
+- Learnable spectral diffusion layers
+- Spatial gradient feature modules
+- Residual DiffusionNet blocks with MLP updates
+- HKS/WKS input features
+- Segmentation training, validation, visualization, and ablation studies
+
+**Implementation.** [`diffusionnet_rna_segmentation`](diffusionnet_rna_segmentation/) contains the DiffusionNet notebook. `td4_utils.py` gathers the spectral diffusion modules, network blocks, trainer logic, and feature utilities.
+
+### PointNet Classification and Segmentation
+
+**Objective.** Study point-cloud learning with PointNet, including classification on ModelNet-style data and segmentation on mesh-derived point samples.
+
+**Core ideas.**
+
+- PointNet feature transforms and shared point-wise MLPs
+- Global max-pooling for permutation-invariant shape representations
+- Classification and segmentation heads
+- Point-cloud data augmentation with scaling, translation, and rotation
+- ModelNet40 data loading from HDF5 files
+- Regularized losses and training loops
+
+**Implementation.** [`pointnet_classification_segmentation`](pointnet_classification_segmentation/) contains the PointNet notebook. `lab4_utils.py` factors out the PointNet modules, datasets, losses, and trainer classes.
+
+### Implicit Mesh Reconstruction
+
+**Objective.** Reconstruct surfaces from point clouds using signed and unsigned implicit distance representations.
+
+**Core ideas.**
+
+- Signed distance estimation from oriented point clouds
+- Grid-based SDF evaluation and marching cubes reconstruction
+- DeepSDF-style neural implicit functions
+- Eikonal-style regularization
+- Unsigned distance and SAL-style losses
+- Mesh export and qualitative reconstruction comparison
+
+**Implementation.** [`implicit_mesh_reconstruction`](implicit_mesh_reconstruction/) contains the reconstruction notebook. `td5_utils.py` collects SDF computation, neural field definitions, loss functions, training loops, and reconstruction helpers.
+
+### Implicit Shape Interpolation
+
+**Objective.** Use SIREN implicit neural representations to model and interpolate geometric shapes.
+
+**Core ideas.**
+
+- Sinusoidal representation networks (SIREN)
+- Shape data attachment and SDF supervision
+- Eikonal regularization
+- Level-set and vector-field constraints
+- Morphing between synthetic shapes
+- Implicit shape visualization through marching squares
+
+**Implementation.** [`implicit_shape_interpolation`](implicit_shape_interpolation/) contains the SIREN interpolation notebook. `tp6_utils.py` gathers the SIREN layers, losses, optimization routines, vector-field helpers, and morphing utilities.
 
 ## Design Notes
 
@@ -39,4 +131,3 @@ pip install -r requirements.txt
 ```
 
 Some notebooks still include Colab-style setup cells that download course datasets or helper archives.
-# MVA-Geometry-Processing-and-Geometric-Deep-Learning
