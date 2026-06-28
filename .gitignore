@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+**/.venv/
+
+# Local data and downloaded archives
+data/
+datasets/
+RNADataset/
+*.zip
+*.tar.gz
+
+# Keep the small surface-operator mesh assets that are part of this folder.
+!surface_operators_diffusion/data/
+!surface_operators_diffusion/data/meshes/
+!surface_operators_diffusion/data/meshes/*.off
+
+# Model checkpoints and generated artifacts
+*.pt
+*.pth
+*.pth.tar
+*.net
+checkpoints/
+models/
+outputs/
+results/
+*.obj
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+__MACOSX/

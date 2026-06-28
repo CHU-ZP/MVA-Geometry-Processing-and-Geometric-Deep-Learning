@@ -1,0 +1,12 @@
+h5py
+jupyter
+matplotlib
+meshplot
+numpy
+potpourri3d
+pymcubes
+pythreejs
+scipy
+torch
+tqdm
+xvfbwrapper
