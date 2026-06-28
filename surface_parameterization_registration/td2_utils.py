@@ -1,4 +1,4 @@
-"""Utilities extracted from TD2_ZepengCHU.ipynb.
+"""Utilities extracted from surface_parameterization_registration.ipynb.
 
 This module follows the notebook-first layout used in the reference coursework repo: the notebook keeps the narrative, and this file collects reusable definitions.
 """

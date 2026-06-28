@@ -1,4 +1,4 @@
-"""Utilities extracted from Lab4.ipynb.
+"""Utilities extracted from pointnet_classification_segmentation.ipynb.
 
 This module follows the notebook-first layout used in the reference coursework repo: the notebook keeps the narrative, and this file collects reusable definitions.
 """

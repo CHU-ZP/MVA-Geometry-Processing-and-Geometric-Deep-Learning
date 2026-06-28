@@ -1,4 +1,4 @@
-"""Utilities extracted from TD4_mva_geom_ZepengCHU.ipynb.
+"""Utilities extracted from diffusionnet_rna_segmentation.ipynb.
 
 This module follows the notebook-first layout used in the reference coursework repo: the notebook keeps the narrative, and this file collects reusable definitions.
 """

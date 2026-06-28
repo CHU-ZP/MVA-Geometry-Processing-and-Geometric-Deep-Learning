@@ -1,4 +1,4 @@
-"""Utilities extracted from TP_6_ZepengCHU.ipynb.
+"""Utilities extracted from implicit_shape_interpolation.ipynb.
 
 This module follows the notebook-first layout used in the reference coursework repo: the notebook keeps the narrative, and this file collects reusable definitions.
 """

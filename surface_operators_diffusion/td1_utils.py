@@ -1,4 +1,4 @@
-"""Utilities extracted from TD1_correction.ipynb.
+"""Utilities extracted from mesh_operators_diffusion.ipynb.
 
 This module follows the notebook-first layout used in the reference coursework repo: the notebook keeps the narrative, and this file collects reusable definitions.
 """

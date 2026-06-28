@@ -1,4 +1,4 @@
-"""Utilities extracted from TD5.ipynb.
+"""Utilities extracted from implicit_mesh_reconstruction.ipynb.
 
 This module follows the notebook-first layout used in the reference coursework repo: the notebook keeps the narrative, and this file collects reusable definitions.
 """
